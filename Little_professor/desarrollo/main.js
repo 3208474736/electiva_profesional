@@ -3,28 +3,30 @@ import utils from "./utils";
 let nivel       = 1,
     operacion   = "+",
     setActivado = false,
-    operadores  = ["/", "*", "-", "+"];
+    operadores  = ["/", "*", "-", "+"],
+    respuestaValor = 0,
     ecuacion = "";
-    respuestaOpera = "";
+let operacionValor = ()=>
 
-    console.log("hola mundo");
-
-
- let operacionValor =  () =>
 {
-    let op1=0;
-    let op2 = 0;
- switch (nivel)
- {
-    case 1:
-         let op1 = Math.floor(Math.random() * 10);
-         let op2 = Math.floor(Math.random() * 10);
+let opr1=0,
+    opr2=0;
+    //let resultado ="";
+    switch (nivel)
+    {
+      case 1://nivel uno
+      opr1= Math.floor(Math.random()* 10);
+      opr2=Math.floor(Math.random()* 10);
 
-     ecuacion = op1 + operacion + op2;
- break;
- } 
- utils.accesoDOM("lcd").innerHTML =  `${ecuacion}`= ${ecuacion}`;
-} ;  
+      ecuacion = opr1 + operacion + opr2;
+
+        break
+      }
+      respuestaValor = eval(ecuacion);
+      utils.accesoDOM("lcd").innerHTML = `${ecuacion} =${respuestaValor}`;
+      // console.log(ecuacion);
+
+  }
 
 let presionaTecla = opc =>
 {
@@ -36,8 +38,8 @@ let presionaTecla = opc =>
         {
             //Imprimir las opciones...
             if(utils.isNumber(opc))
+            //Saber si el número está en un nivel de 1 a 5...
             {
-                //Saber si el número está en un nivel de 1 a 5...
                 if(Number(opc) >= 1 && Number(opc) <= 5)
                 {
                     nivel = Number(opc);
@@ -62,6 +64,7 @@ let presionaTecla = opc =>
         {
             setActivado = false;
             utils.accesoDOM("lcd").innerHTML = "";
+            operacionValor();
         }
     }
     else
