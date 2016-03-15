@@ -1,0 +1,1 @@
+console.error("SyntaxError: C:/wamp/www/clase_07_little_professor/desarrollo/main.js: Assigning to rvalue (26:37) while parsing file: C:\\wamp\\www\\clase_07_little_professor\\desarrollo\\main.js");
