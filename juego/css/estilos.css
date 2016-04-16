@@ -1,0 +1,22 @@
+#escenario
+{
+
+	margin: 0 auto;
+	border: 1px solid orange;
+	box-shadow: 1px 1px 2px 2px rgba(0,0,0,9);
+	margin-top: 40px;
+	width: 15%;
+
+}
+
+td
+{
+	width: 40px;
+	height: 40px;
+	border: 2px solid black;
+}
+#botonAleatorio
+{
+ border-radius: 50%;
+ margin: center;
+}
